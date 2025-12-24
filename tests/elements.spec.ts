@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import user from '../data/elements.json';
 
+
+test.describe ('elements', () => {
+    
 test('elements: Text Box', async ({ page }) => {
 
     const userNameInput = page.locator('#userName');
@@ -24,3 +27,14 @@ test('elements: Text Box', async ({ page }) => {
     await expect(outputAdress).toContainText(user.adress);
     await expect(outputEmail).toContainText(user.email);
 });
+
+test ('elements: checkBox', async ({page}) => {
+    await page.goto("/");
+    await page.getByText('Elements').click();
+    await page.getByText('Check Box').click();
+    await page.locator('.rct-checkbox').click();
+
+    await expect(page.locator('#result')).toBeVisible();
+})
+
+})
