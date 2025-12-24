@@ -5,6 +5,7 @@
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "types": ["@playwright/test"]
+    "types": ["@playwright/test"],
+    "resolveJsonModule": true
   }
 }
