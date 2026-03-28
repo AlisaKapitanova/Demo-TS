@@ -37,4 +37,30 @@ test ('elements: checkBox', async ({page}) => {
     await expect(page.locator('#result')).toBeVisible();
 })
 
-})
+test('elements: Radio Button', async ({ page }) => {
+    await page.goto('https://demoqa.com/');
+    await page.getByText('Elements').click();
+    await page.getByText('Radio Button').click();
+    await page.locator('label:has-text("Yes")').click();
+    
+    const resultMessage  = page.locator('.mt-3');
+    await expect(resultMessage).toBeVisible();
+    await expect(resultMessage).toContainText('You have selected Yes');
+    
+    // Verify the text color is green
+    const resultMessageYes = page.locator('.mt-3 .text-success');
+    await expect(resultMessageYes).toHaveCSS('color', 'rgb(40, 167, 69)'); // Bootstrap success green color
+});
+
+test('elements: Web Tables', async ({ page }) => {
+    await page.goto('https://demoqa.com/');
+    await page.getByText('Elements').click();
+    await page.getByText('Web Tables').click();
+    await page.locator('#addNewRecordButton').click();
+    await page.locator('#id="firstName"').fill(user.FirstName);
+    await page.locator('id="lastName"').fill(user.LastName);
+    
+
+
+
+});

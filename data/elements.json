@@ -2,7 +2,9 @@
 
     "fullName" : "Best Tester",
     "email" : "alisatestqa@gmail.com",
-    "adress" : "CZ, Praha"
+    "adress" : "CZ, Praha",
+    "FirstName" : "Best",
+    "LastName" : "Tester"
 
 }
 
